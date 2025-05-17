@@ -1,12 +1,6 @@
 import express from 'express'
 import cors from 'cors'
 
-//presentar en mi URL inicial
-app.get('/', (req, res) => {
-  res.send('Servidor API activo y funcionando');
-});
-
-
 //subir imagenes
 import path from 'path'
 import { fileURLToPath } from 'url'
