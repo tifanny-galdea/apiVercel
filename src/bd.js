@@ -1,4 +1,5 @@
-import { createPool } from "mysql2/promise";
+
+import mysql from 'mysql2/promise';
 
 import {
     bd_host,
@@ -8,10 +9,13 @@ import {
     bd_port,
 } from './config.js'
 
-export const conmysql = createPool({
-    host: bd_host,
-    database: bd_database,
-    user: bd_user,
-    password: bd_password,
-    port: bd_port
-})
+export const conmysql = await mysql.createPool({
+  host: bd_host,
+  database: bd_database,
+  user: bd_user,
+  password: bd_password,
+  port: bd_port,
+  ssl: {
+    rejectUnauthorized: true // Necesario para Render
+  }
+});

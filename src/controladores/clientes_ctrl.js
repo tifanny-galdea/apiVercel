@@ -12,7 +12,7 @@ export const getClientes= async(req,res) =>{
             data:result
         })
     }catch(error){
-        return res.status(500).json({message:" error en el servidor"})
+        return res.status(500).json({message: "Error en el servidor", error: error.message})
     }
 }
 
