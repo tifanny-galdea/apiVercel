@@ -15,5 +15,7 @@ export const conmysql = await mysql.createPool({
   user: MYSQL_ADDON_USER,
   password: MYSQL_ADDON_PASSWORD,
   port: MYSQL_ADDON_PORT,
-  ssl: true
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
