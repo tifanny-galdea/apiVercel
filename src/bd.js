@@ -2,20 +2,18 @@
 import mysql from 'mysql2/promise';
 
 import {
-    bd_host,
-    bd_database,
-    bd_user,
-    bd_password,
-    bd_port,
+    MYSQL_ADDON_HOST,
+    MYSQL_ADDON_DB,
+    MYSQL_ADDON_USER,
+    MYSQL_ADDON_PASSWORD,
+    MYSQL_ADDON_PORT ,
 } from './config.js'
 
 export const conmysql = await mysql.createPool({
-  host: bd_host,
-  database: bd_database,
-  user: bd_user,
-  password: bd_password,
-  port: bd_port,
-  ssl: {
-    rejectUnauthorized: true // Necesario para Render
-  }
+  host: MYSQL_ADDON_HOST,
+  database: MYSQL_ADDON_DB,
+  user: MYSQL_ADDON_USER,
+  password: MYSQL_ADDON_PASSWORD,
+  port: MYSQL_ADDON_PORT,
+  ssl: true
 });
